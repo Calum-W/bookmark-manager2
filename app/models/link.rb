@@ -1,6 +1,5 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
-require 'sequel'
 
 DataMapper::Logger.new($stdout, :debug)
 

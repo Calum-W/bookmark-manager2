@@ -2,9 +2,6 @@ require 'data_mapper'
 require 'dm-postgres-adapter'
 
 
-# DataMapper::Logger.new($stdout, :debug)
-
-
 class Tag
   include DataMapper::Resource
 
@@ -12,5 +9,6 @@ class Tag
   property :name,        String
 
   belongs_to :link, required: false
+  has n, :links, through: Resource
 
 end

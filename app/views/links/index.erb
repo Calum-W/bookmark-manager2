@@ -3,9 +3,16 @@
 <ul id='links'>
   <% @links.each do |link| %>
     <li>
-      Title: <%= link.title %>
-      URL: <%=link.url %>
+      <a href= "<%=link.url %>"><%= link.title %></a>
     </li>
+  <% end %>
+</ul>
+
+<ul id='tags'>
+  <% @tags.each do |tag| %>
+  <form align="center" action="/tags/<%=tag.name%>" method='post'>
+    <button name="tag_name" type="submit" value="<%=tag.name%>"><%=tag.name%></button>
+  </form>
   <% end %>
 </ul>
 

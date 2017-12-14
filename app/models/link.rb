@@ -2,7 +2,7 @@ require 'data_mapper'
 require 'dm-postgres-adapter'
 require './app/models/tag.rb'
 
-DataMapper::Logger.new($stdout, :debug)
+# DataMapper::Logger.new($stdout, :debug)
 
 
 class Link

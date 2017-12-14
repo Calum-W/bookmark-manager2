@@ -10,7 +10,7 @@
 
 <ul id='tags'>
   <% @tags.each do |tag| %>
-  <form align="center" action="/tags/<%=tag.name%>" method='post'>
+  <form align="center" action="/tags/<%=tag.name%>" method='get'>
     <button name="tag_name" type="submit" value="<%=tag.name%>"><%=tag.name%></button>
   </form>
   <% end %>

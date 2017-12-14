@@ -5,6 +5,7 @@ gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'dm-migrations'
 gem 'sinatra'
+gem 'rake'
 
 group :test do
   gem 'database_cleaner'

@@ -10,6 +10,17 @@ feature 'Adding tags' do
     expect(link.tags.map(&:name)).to include('fun')
   end
 
+  scenario "multiple tags can be added as links are created" do
+    visit('/links/new')
+    fill_in 'title', with: 'BBC'
+    fill_in 'url', with: "http://www.bbc.co.uk"
+    fill_in 'tag', with: 'news football'
+
+    click_button 'Create link'
+    link = Link.first
+    expect(link.tags.map(&:name)).to include('news', 'football')
+  end
+
   scenario 'I can filter links by tag' do
     Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy', tags: [Tag.first_or_create(name: 'education')])
     Link.create(url: 'http://www.google.com', title: 'Google', tags: [Tag.first_or_create(name: 'search')])
